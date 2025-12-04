@@ -62,7 +62,7 @@ export function Services() {
   ];
 
   return (
-    <section className="section-container bg-blue-950 snap-start">
+    <section className="section-container bg-white snap-start">
       <div className="w-full max-w-7xl mx-auto h-full flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ export function Services() {
           <h2 className="text-4xl md:text-5xl font-bold mb-2">
             Our <span className="text-gradient">Services</span>
           </h2>
-          <p className="text-blue-200 text-sm md:text-base max-w-2xl mx-auto">
+          <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
             Comprehensive AI solutions across industries.
           </p>
         </motion.div>
@@ -86,11 +86,10 @@ export function Services() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-blue-900/30 border border-blue-800 rounded-2xl overflow-hidden hover:border-blue-500 transition-all group flex flex-row h-32 md:h-40"
+              className="bg-white hover:bg-[#10b981] border border-[#10b981] rounded-2xl overflow-hidden hover:border-[#34d399] transition-all group flex flex-row h-32 md:h-40"
             >
               {/* Image Section (Left) */}
-              <div className="w-1/3 relative overflow-hidden">
-                <div className="absolute inset-0 bg-blue-950/20 group-hover:bg-transparent transition-colors z-10" />
+              <div className="w-32 md:w-40 h-full relative overflow-hidden flex-shrink-0">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -100,14 +99,14 @@ export function Services() {
 
               {/* Content Section (Right) */}
               <div className="w-2/3 p-4 flex flex-col justify-center relative">
-                <div className="absolute top-2 right-2 bg-blue-950/50 p-1.5 rounded-lg">
-                  <service.icon className="w-4 h-4 text-blue-400" />
+                <div className="absolute top-2 right-2 bg-white p-1.5 rounded-lg">
+                  <service.icon className="w-4 h-4 text-green-400" />
                 </div>
 
-                <h3 className="text-lg font-bold mb-1 text-white group-hover:text-blue-300 transition-colors">{service.title}</h3>
-                <p className="text-blue-200 text-xs md:text-sm line-clamp-2">{service.description}</p>
+                <h3 className="text-lg font-bold mb-1 text-gray-900 group-hover:text-white transition-colors">{service.title}</h3>
+                <p className="text-gray-600 group-hover:text-white text-xs md:text-sm line-clamp-2">{service.description}</p>
 
-                <div className="mt-2 flex items-center text-xs text-blue-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="mt-2 flex items-center text-xs text-[#10b981] group-hover:text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                   Explore <ArrowRight className="w-3 h-3 ml-1" />
                 </div>
               </div>

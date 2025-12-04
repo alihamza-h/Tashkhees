@@ -54,12 +54,12 @@ export function Navigation() {
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center bg-blue-950/50 backdrop-blur-md rounded-full px-6 py-3 border border-blue-800/30 shadow-lg max-w-5xl mx-auto">
+        <div className="flex justify-between items-center bg-white  rounded-full px-6 py-3 border border-[#10b981] shadow-lg max-w-5xl mx-auto">
           <div
             className="text-xl font-bold text-white cursor-pointer flex items-center gap-2"
             onClick={() => scrollToSection("home")}
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-[#10b981] to-[#6ee7b7] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">T</span>
             </div>
             <span className="hidden sm:inline">Tashkhees</span>
@@ -73,13 +73,13 @@ export function Navigation() {
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.id)}
-                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${isActive ? "text-white" : "text-blue-200 hover:text-white"
+                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${isActive ? "text-white" : "text-gray-600 hover:text-white"
                     }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="active-pill"
-                      className="absolute inset-0 bg-blue-600 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+                      className="absolute inset-0 bg-[#10b981] rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -91,7 +91,7 @@ export function Navigation() {
 
           <div className="hidden md:block">
             <Button
-              className="bg-white text-blue-950 hover:bg-blue-50 font-semibold rounded-full px-6 h-10"
+              className="bg-white text-green-950 hover:bg-green-50 font-semibold rounded-full px-6 h-10"
               onClick={() => scrollToSection("contact")}
             >
               Get Started
@@ -116,7 +116,7 @@ export function Navigation() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-blue-950/95 backdrop-blur-xl border-t border-blue-800 absolute top-full left-0 right-0 shadow-2xl"
+          className="md:hidden bg-white  border-t border-green-800 absolute top-full left-0 right-0 shadow-2xl"
         >
           <div className="px-4 pt-2 pb-6 space-y-2">
             {navLinks.map((link) => (
@@ -124,8 +124,8 @@ export function Navigation() {
                 key={link.name}
                 onClick={() => scrollToSection(link.id)}
                 className={`block w-full text-left px-4 py-3 rounded-xl text-base font-medium ${activeSection === link.id
-                  ? "bg-blue-600 text-white shadow-lg"
-                  : "text-blue-100 hover:bg-blue-900"
+                  ? "bg-[#10b981] text-white shadow-lg"
+                  : "text-gray-700 hover:bg-[#d1fae5]"
                   }`}
               >
                 {link.name}

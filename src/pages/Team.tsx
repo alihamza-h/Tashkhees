@@ -36,7 +36,7 @@ export function Team() {
   ];
 
   return (
-    <section className="section-container bg-blue-950 snap-start">
+    <section className="section-container bg-white snap-start">
       <div className="w-full max-w-7xl mx-auto h-full flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export function Team() {
           <h2 className="text-4xl md:text-5xl font-bold mb-2">
             Meet Our <span className="text-gradient">Experts</span>
           </h2>
-          <p className="text-blue-200 text-sm md:text-base max-w-2xl mx-auto">
+          <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
             Driving innovation across healthcare, legal, and education sectors.
           </p>
         </motion.div>
@@ -59,10 +59,10 @@ export function Team() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="group relative bg-blue-900/20 border border-blue-800 rounded-xl overflow-hidden hover:border-blue-500 transition-all flex items-center p-4 gap-4 h-28 md:h-32"
+              className="group relative bg-white hover:bg-[#10b981] border border-[#10b981] rounded-xl overflow-hidden hover:border-[#34d399] transition-all flex items-center p-4 gap-4 h-28 md:h-32"
             >
               {/* Avatar Image */}
-              <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-blue-800 group-hover:border-blue-400 transition-colors shrink-0">
+              <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-[#10b981] group-hover:border-[#34d399] transition-colors shrink-0">
                 <img
                   src={member.image}
                   alt={member.name}
@@ -72,14 +72,14 @@ export function Team() {
 
               {/* Info */}
               <div className="flex-1">
-                <h3 className="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">{member.name}</h3>
-                <p className="text-blue-400 text-sm font-medium mb-2">{member.role}</p>
+                <h3 className="text-lg font-bold text-gray-900 group-hover:text-white mb-1 transition-colors">{member.name}</h3>
+                <p className="text-[#10b981] group-hover:text-white text-sm font-medium mb-2">{member.role}</p>
 
                 {/* Social Icons (Visible on Hover) */}
                 <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-[-10px] group-hover:translate-x-0">
-                  <a href="#" className="text-blue-300 hover:text-white transition-colors"><Linkedin size={16} /></a>
-                  <a href="#" className="text-blue-300 hover:text-white transition-colors"><Twitter size={16} /></a>
-                  <a href="#" className="text-blue-300 hover:text-white transition-colors"><Mail size={16} /></a>
+                  <a href="#" className="text-gray-700 group-hover:text-white hover:text-white transition-colors"><Linkedin size={16} /></a>
+                  <a href="#" className="text-gray-700 group-hover:text-white hover:text-white transition-colors"><Twitter size={16} /></a>
+                  <a href="#" className="text-gray-700 group-hover:text-white hover:text-white transition-colors"><Mail size={16} /></a>
                 </div>
               </div>
             </motion.div>

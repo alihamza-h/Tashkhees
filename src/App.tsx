@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Navigation />
-      <main className="flex flex-col bg-blue-950 text-white min-h-screen w-full overflow-x-hidden">
+      <main className="flex flex-col bg-white text-gray-900 min-h-screen w-full overflow-x-hidden">
         <Navigation />
         <div id="home"><Home /></div>
         <div id="about"><About /></div>

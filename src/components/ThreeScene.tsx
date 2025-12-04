@@ -8,7 +8,7 @@ function Atom({ count = 4, radius = 2 }) {
         () => new Array(count).fill(0).map(() => ({
             speed: 0.5 + Math.random() * 0.5,
             rotation: [Math.random() * Math.PI, Math.random() * Math.PI, 0],
-            color: new THREE.Color(Math.random() > 0.5 ? '#60a5fa' : '#a78bfa').multiplyScalar(2), // Blue to Purple
+            color: new THREE.Color(Math.random() > 0.5 ? '#6ee7b7' : '#a7f3d0').multiplyScalar(2), // Green shades
         })),
         [count]
     );
@@ -53,8 +53,8 @@ function Core() {
     return (
         <mesh>
             <sphereGeometry args={[0.5, 32, 32]} />
-            <meshStandardMaterial color="#3b82f6" emissive="#1d4ed8" emissiveIntensity={2} roughness={0.1} metalness={0.8} />
-            <pointLight intensity={2} distance={5} color="#60a5fa" />
+            <meshStandardMaterial color="#10b981" emissive="#059669" emissiveIntensity={2} roughness={0.1} metalness={0.8} />
+            <pointLight intensity={2} distance={5} color="#6ee7b7" />
         </mesh>
     );
 }

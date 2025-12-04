@@ -36,12 +36,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="section-container overflow-hidden bg-blue-950 relative">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse delay-1000" />
-      </div>
+    <section className="section-container overflow-hidden bg-white relative">
 
       <div className="container mx-auto px-4 z-10 relative mb-12 text-center">
         <motion.h2
@@ -51,7 +46,7 @@ export function Testimonials() {
         >
           Client <span className="text-gradient">Testimonials</span>
         </motion.h2>
-        <p className="text-blue-200 text-lg max-w-2xl mx-auto">
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
           Trusted by industry leaders across the globe.
         </p>
       </div>
@@ -70,10 +65,10 @@ export function Testimonials() {
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div
                 key={index}
-                className="w-[350px] md:w-[450px] p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors flex flex-col gap-4 relative group"
+                className="w-[350px] md:w-[450px] p-8 rounded-2xl bg-white border border-[#10b981] hover:bg-white transition-colors flex flex-col gap-4 relative group"
               >
-                <div className="absolute -top-4 -left-4 bg-blue-600 p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity shadow-lg shadow-blue-600/50">
-                  <Quote className="w-6 h-6 text-white" />
+                <div className="absolute -top-4 -left-4 bg-white hover:bg-[#10b981] p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity shadow-lg shadow-[#10b981]">
+                  <Quote className="w-6 h-6 text-gray-900" />
                 </div>
 
                 <div className="flex gap-1 mb-2">
@@ -82,17 +77,17 @@ export function Testimonials() {
                   ))}
                 </div>
 
-                <p className="text-lg text-blue-100 italic leading-relaxed">
+                <p className="text-lg text-gray-700 italic leading-relaxed">
                   "{testimonial.content}"
                 </p>
 
-                <div className="mt-auto pt-6 border-t border-white/10 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-xl font-bold text-white">
+                <div className="mt-auto pt-6 border-t border-white flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#10b981] to-[#6ee7b7] flex items-center justify-center text-xl font-bold text-gray-900">
                     {testimonial.name[0]}
                   </div>
                   <div>
-                    <h4 className="font-bold text-white">{testimonial.name}</h4>
-                    <p className="text-sm text-blue-300">{testimonial.role}</p>
+                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-700">{testimonial.role}</p>
                   </div>
                 </div>
               </div>

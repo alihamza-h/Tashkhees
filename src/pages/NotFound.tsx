@@ -35,7 +35,7 @@ export function NotFound() {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <Link to="/">
-            <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white">
+            <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-gray-900">
               <Home className="mr-2 w-5 h-5" />
               Go Home
             </Button>

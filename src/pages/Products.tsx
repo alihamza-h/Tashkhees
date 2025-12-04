@@ -45,9 +45,8 @@ export function Products() {
     };
 
     return (
-        <section className="section-container bg-blue-950 relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-blue-950 to-blue-950 z-0" />
+        <section className="section-container bg-white relative overflow-hidden">
+
 
             <div className="container mx-auto px-4 z-10 relative h-full flex flex-col justify-center">
                 <motion.div
@@ -58,7 +57,7 @@ export function Products() {
                     <h2 className="text-4xl md:text-6xl font-bold mb-4">
                         Our <span className="text-gradient">Products</span>
                     </h2>
-                    <p className="text-blue-200 text-lg">Innovative solutions powering the future.</p>
+                    <p className="text-gray-600 text-lg">Innovative solutions powering the future.</p>
                 </motion.div>
 
                 <div className="relative max-w-6xl mx-auto w-full">
@@ -71,11 +70,10 @@ export function Products() {
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -100 }}
                                 transition={{ duration: 0.5 }}
-                                className="absolute inset-0 flex flex-col md:flex-row bg-blue-900/20 backdrop-blur-xl border border-blue-800/50 rounded-3xl overflow-hidden shadow-2xl"
+                                className="absolute inset-0 flex flex-col md:flex-row bg-white border border-[#10b981] rounded-3xl overflow-hidden shadow-2xl"
                             >
                                 {/* Image Section */}
                                 <div className="w-full md:w-1/2 h-64 md:h-full relative overflow-hidden group">
-                                    <div className="absolute inset-0 bg-blue-950/20 group-hover:bg-transparent transition-colors z-10" />
                                     <img
                                         src={products[currentIndex].image}
                                         alt={products[currentIndex].title}
@@ -86,35 +84,35 @@ export function Products() {
                                 {/* Content Section */}
                                 <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
                                     <div className="flex items-center gap-3 mb-6">
-                                        <div className="p-3 rounded-xl bg-blue-600/20 text-blue-400">
+                                        <div className="p-3 rounded-xl bg-white hover:bg-[#10b981] text-green-400">
                                             {(() => {
                                                 const Icon = products[currentIndex].icon;
                                                 return <Icon className="w-6 h-6" />;
                                             })()}
                                         </div>
-                                        <span className="text-blue-300 font-medium tracking-wide uppercase text-sm">
+                                        <span className="text-gray-700 font-medium tracking-wide uppercase text-sm">
                                             {products[currentIndex].category}
                                         </span>
                                     </div>
 
-                                    <h3 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+                                    <h3 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900">
                                         {products[currentIndex].title}
                                     </h3>
 
-                                    <p className="text-blue-100 text-lg mb-8 leading-relaxed">
+                                    <p className="text-gray-700 text-lg mb-8 leading-relaxed">
                                         {products[currentIndex].description}
                                     </p>
 
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                                         {products[currentIndex].features.map((feature, idx) => (
-                                            <div key={idx} className="flex items-center gap-2 text-blue-200">
+                                            <div key={idx} className="flex items-center gap-2 text-gray-600">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
                                                 {feature}
                                             </div>
                                         ))}
                                     </div>
 
-                                    <Button className="w-fit bg-blue-600 hover:bg-blue-500 text-white px-8 py-6 rounded-full text-lg group">
+                                    <Button className="w-fit bg-white hover:bg-[#10b981] hover:bg-[#34d399] text-gray-900 px-8 py-6 rounded-full text-lg group">
                                         Learn More
                                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </Button>
@@ -127,7 +125,7 @@ export function Products() {
                     <div className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-16 z-20">
                         <button
                             onClick={prevSlide}
-                            className="p-4 rounded-full bg-blue-900/50 hover:bg-blue-800 text-white backdrop-blur-md border border-blue-700/50 transition-all hover:scale-110"
+                            className="p-4 rounded-full bg-white hover:bg-[#10b981] hover:bg-[#059669] text-gray-900  border border-[#10b981] transition-all hover:scale-110"
                         >
                             <ChevronLeft className="w-6 h-6" />
                         </button>
@@ -135,7 +133,7 @@ export function Products() {
                     <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-16 z-20">
                         <button
                             onClick={nextSlide}
-                            className="p-4 rounded-full bg-blue-900/50 hover:bg-blue-800 text-white backdrop-blur-md border border-blue-700/50 transition-all hover:scale-110"
+                            className="p-4 rounded-full bg-white hover:bg-[#10b981] hover:bg-[#059669] text-gray-900  border border-[#10b981] transition-all hover:scale-110"
                         >
                             <ChevronRight className="w-6 h-6" />
                         </button>
@@ -147,7 +145,7 @@ export function Products() {
                             <button
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)}
-                                className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? "bg-blue-400 w-8" : "bg-blue-800 hover:bg-blue-600"
+                                className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? "bg-blue-400 w-8" : "bg-[#059669] hover:bg-white hover:bg-[#10b981]"
                                     }`}
                             />
                         ))}

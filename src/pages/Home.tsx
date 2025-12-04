@@ -1,227 +1,87 @@
-import { motion, useScroll, useTransform } from "motion/react";
-import { ScrollReveal } from "../components/ScrollReveal";
-import { ParallaxSection } from "../components/ParallaxSection";
-import { ArrowRight, Brain, Shield, Zap, Users, ChevronDown } from "lucide-react";
+import { motion } from "motion/react";
+import { ArrowRight, Brain, Sparkles, Globe, Cpu } from "lucide-react";
 import { Button } from "../components/ui/button";
-import { Link } from "react-router";
-import { useRef } from "react";
+import { ThreeScene } from "../components/ThreeScene";
 
 export function Home() {
-  const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
-
-  const features = [
-    {
-      icon: Brain,
-      title: "AI-Powered Diagnostics",
-      description: "Leverage cutting-edge artificial intelligence to enhance diagnostic accuracy and patient outcomes.",
-    },
-    {
-      icon: Shield,
-      title: "Secure & Compliant",
-      description: "HIPAA-compliant infrastructure ensuring your patient data remains protected at all times.",
-    },
-    {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "Real-time processing and analysis for immediate clinical decision support.",
-    },
-    {
-      icon: Users,
-      title: "Seamless Integration",
-      description: "Easy integration with existing healthcare systems and electronic medical records.",
-    },
-  ];
-
-  const stats = [
-    { value: "500+", label: "Healthcare Providers" },
-    { value: "99.9%", label: "Uptime Guarantee" },
-    { value: "24/7", label: "Expert Support" },
-    { value: "50+", label: "Countries Served" },
-  ];
-
   return (
-    <div className="overflow-hidden">
-      {/* Hero Section */}
-      <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Parallax Background */}
-        <motion.div 
-          className="absolute inset-0 z-0"
-          style={{ scale }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/90 to-emerald-950/90 z-10" />
-          <img
-            src="https://images.unsplash.com/photo-1560306990-18fa759c8713?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwdGVjaG5vbG9neSUyMGhlYXJ0fGVufDF8fHx8MTc2NDU2NzQzNHww&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Medical Technology"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+    <section className="section-container relative overflow-hidden">
+      {/* 3D Background Scene */}
+      <ThreeScene />
 
-        {/* Hero Content */}
-        <motion.div 
-          className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-center"
-          style={{ opacity }}
-        >
+      {/* Gradient Overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-950/80 via-blue-950/50 to-blue-950/90 z-0 pointer-events-none" />
+
+      <div className="container mx-auto px-4 z-10 relative">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/50 border border-blue-700/50 mb-8 backdrop-blur-sm"
           >
-            <motion.h1 
-              className="text-5xl md:text-7xl mb-6 text-white"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
-            >
-              Empowering Healthcare
-              <br />
-              <span className="text-emerald-400">Through Technology</span>
-            </motion.h1>
+            <Sparkles className="w-4 h-4 text-blue-400" />
+            <span className="text-sm font-medium text-blue-200">Next-Gen AI Solutions</span>
           </motion.div>
 
-          <motion.p
-            className="text-xl md:text-2xl text-emerald-50 mb-12 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
           >
-            Tashkhees delivers innovative AI-based software solutions that transform healthcare delivery, 
-            enhance patient care, and streamline medical operations.
+            Empowering Future with <br />
+            <span className="text-gradient">Artificial Intelligence</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl text-blue-200 mb-10 max-w-2xl mx-auto leading-relaxed"
+          >
+            We transform complex challenges into intelligent solutions. From Healthcare to Legal Tech, our AI-driven software redefines what's possible.
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Link to="/services">
-              <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white group">
-                Explore Services
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-emerald-900">
-                Get Started
-              </Button>
-            </Link>
+            <Button className="h-14 px-8 text-lg rounded-full bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-600/25 group">
+              Explore Solutions
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button variant="outline" className="h-14 px-8 text-lg rounded-full border-blue-700 text-blue-100 hover:bg-blue-900/50 backdrop-blur-sm">
+              View Case Studies
+            </Button>
           </motion.div>
-        </motion.div>
+        </div>
 
-        {/* Scroll Indicator */}
+        {/* Stats Section */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-blue-800/50 pt-12"
         >
-          <ChevronDown className="w-8 h-8 text-white opacity-70" />
+          {[
+            { icon: Brain, label: "AI Models", value: "50+" },
+            { icon: Globe, label: "Global Clients", value: "100+" },
+            { icon: Cpu, label: "Processing Power", value: "10PF" },
+            { icon: Sparkles, label: "Success Rate", value: "99%" },
+          ].map((stat, index) => (
+            <div key={index} className="text-center group hover:bg-blue-900/20 p-4 rounded-2xl transition-colors">
+              <div className="mb-4 inline-flex p-3 rounded-xl bg-blue-900/30 text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                <stat.icon className="w-6 h-6" />
+              </div>
+              <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+              <div className="text-sm text-blue-300">{stat.label}</div>
+            </div>
+          ))}
         </motion.div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 md:py-32 bg-white relative">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl mb-6 text-black">
-                Why Choose <span className="text-emerald-600">Tashkhees</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                We combine medical expertise with technological innovation to deliver 
-                solutions that make a real difference in healthcare.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <ScrollReveal key={index} delay={index * 0.1}>
-                <ParallaxSection offset={30}>
-                  <motion.div
-                    className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 h-full hover:shadow-xl transition-shadow"
-                    whileHover={{ y: -10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <motion.div
-                      className="bg-gradient-to-br from-emerald-500 to-emerald-700 w-14 h-14 rounded-xl flex items-center justify-center mb-6"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <feature.icon className="w-7 h-7 text-white" />
-                    </motion.div>
-                    <h3 className="text-xl mb-4 text-black">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </motion.div>
-                </ParallaxSection>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-br from-emerald-600 to-emerald-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <ScrollReveal key={index} delay={index * 0.1}>
-                <motion.div
-                  className="text-center"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <motion.div
-                    className="text-5xl md:text-6xl mb-2 text-white"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                  >
-                    {stat.value}
-                  </motion.div>
-                  <div className="text-emerald-100">{stat.label}</div>
-                </motion.div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="bg-gradient-to-br from-emerald-900 to-emerald-950 rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 left-0 w-72 h-72 bg-emerald-500 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 right-0 w-72 h-72 bg-emerald-300 rounded-full blur-3xl" />
-              </div>
-              
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl mb-6 text-white">
-                  Ready to Transform Your Healthcare?
-                </h2>
-                <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
-                  Join hundreds of healthcare providers who trust Tashkhees for their digital transformation journey.
-                </p>
-                <Link to="/contact">
-                  <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white group">
-                    Schedule a Demo
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
